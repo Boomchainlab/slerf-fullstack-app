@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .coin-button {
+    @apply relative w-32 h-32 rounded-full bg-gradient-to-br from-slerf-lightGold via-slerf-gold to-slerf-darkGold;
+    @apply border-4 border-slerf-darkGold shadow-2xl cursor-pointer;
+    @apply transition-all duration-200 hover:scale-105 active:scale-95;
+    @apply flex items-center justify-center text-slerf-darkGold font-bold text-2xl;
+  }
+
+  .coin-button::before {
+    content: "";
+    @apply absolute inset-2 rounded-full bg-gradient-to-br from-slerf-gold to-slerf-darkGold;
+    @apply opacity-80;
+  }
+
+  .coin-button::after {
+    content: "₿";
+    @apply absolute inset-0 flex items-center justify-center text-4xl font-bold;
+    @apply text-slerf-darkGold z-10;
+  }
+
+  .dashboard-container {
+    @apply bg-white rounded-xl shadow-2xl p-6 border border-gray-200;
+  }
+
+  .game-container {
+    @apply flex flex-col items-center justify-center min-h-screen p-4;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-yellow-400 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-yellow-500;
+}
